@@ -55,3 +55,10 @@ Die Laufzeitdatenbank wird unter `Application.persistentDataPath` gespeichert. E
 
 Ziel war die Entwicklung einer funktionsfähigen CRUD-Anwendung mit SQLite und einer Trennung der Verantwortlichkeiten.
 '@ | Set-Content -Encoding utf8 README.md
+
+## UML-Klassendiagramm
+
+Das folgende Klassendiagramm veranschaulicht die Struktur des
+AdventureDialogManager-Projekts und die Beziehungen zwischen den Klassen.
+
+![UML-Klassendiagramm](AdventureDialogManager.png)

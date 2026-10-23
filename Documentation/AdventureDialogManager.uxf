@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>Projekt: AdventureDialogManager
+</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>230</y>
+      <w>210</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>_DialogManagerUI_
+--
+
+- _dialogService : DialogService
+
+--
+
++ AddDialog() : void
+
++ UpdateDialog() : void
+
++ DeleteDialog() : void
+
++ RefreshDialog() : void
+
+- ClearInputs() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>30</x>
+      <y>30</y>
+      <w>1020</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>*Projekt: AdventureDialogManager*
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>230</y>
+      <w>460</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>_DialogService_
+--
+
+- _repository : DialogRepository
+
+--
+
++ GetAllDialogs() : List&lt;DialogEntry&gt;
+
++ AddDialog(characterName: string, text: string, condition: string) : void
+
++ UpdateDialog(entry) : void
+
++ DeleteDialog(entry) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1030</x>
+      <y>230</y>
+      <w>210</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>_DialogRepository_
+--
+
+- _database : SQliteConnection
+
+--
+
++ GetAll() : List&lt;DialogEntry&gt;
+
++ Add(Entry) : void
+
++ Update(entry) : void
+
++ Delete(entry) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1030</x>
+      <y>590</y>
+      <w>210</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>_DialogEntry_
+--
+
++ Id : int
+
++ CharacterName : string
+
++ Text : string
+
++ Condition : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>350</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>350</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1120</x>
+      <y>450</y>
+      <w>30</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>30</x>
+      <y>110</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Notiz 1 – DialogManagerUI
+
+Aufgabe: Benutzeroberfläche der Anwendung. 
+Nimmt Benutzereingaben entgegen und ruft die 
+passenden Methoden des DialogService auf. 
+Aktualisiert die Anzeige und prüft Eingaben 
+auf Gültigkeit.
+fontsize=10
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>400</x>
+      <y>120</y>
+      <w>270</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Notiz 2 – DialogService
+
+Aufgabe: Enthält die Anwendungslogik für die Verwaltung 
+der Dialoge. Nimmt Aufträge von der Benutzeroberfläche 
+entgegen und leitet Datenbankoperationen an das 
+Repository weiter.
+fontsize=10
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>990</x>
+      <y>120</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Notiz 3 – DialogRepository
+
+Aufgabe: Verantwortlich für den Datenzugriff. 
+Erstellt die SQLite-Tabelle und führt 
+Datenbankoperationen zum Lesen, Einfügen, 
+Aktualisieren und Löschen von Dialogeinträgen aus.
+fontsize=10
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>760</x>
+      <y>670</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Notiz 4 – DialogEntry
+
+Aufgabe: Datenmodell eines Dialogeintrags. 
+Speichert die ID, den Charakternamen, den Dialogtext 
+und die Bedingung. Die ID wird von SQLite 
+automatisch vergeben.
+fontsize=10
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>60</x>
+      <y>490</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Benutzeroberfläche
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>550</x>
+      <y>460</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Geschäftslogik
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>910</x>
+      <y>460</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Datenbankzugriff
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>890</x>
+      <y>590</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Datenmodell
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
